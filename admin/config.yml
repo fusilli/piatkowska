@@ -17,12 +17,12 @@ collections:
         - { label: "Tytuł", name: "title", widget: "string" }
         - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
         - label: "Pozycja w menu"
-          name: "menu"
+          name: "eleventyNavigation"
           widget: "object"
           fields:
             - { label: "Tekst", name: "key", widget: "string" }
             - { label: "Kolejność", name: "order", widget: "number" }
-        - { label: "Galeria", name: "galeria", widget: "list" }
+        - { label: "Galeria", name: "galeria", widget: "list", max: 3, min: 3 }
         - { label: "Treść", name: "body", widget: "markdown" }
     - label: "Oferta"
       name: "oferta"
@@ -31,7 +31,7 @@ collections:
         - { label: "Tytuł", name: "title", widget: "string" }
         - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
         - label: "Pozycja w menu"
-          name: "menu"
+          name: "eleventyNavigation"
           widget: "object"
           fields:
             - { label: "Tekst", name: "key", widget: "string" }
@@ -45,7 +45,7 @@ collections:
         - { label: "Tytuł", name: "title", widget: "string" }
         - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
         - label: "Pozycja w menu"
-          name: "menu"
+          name: "eleventyNavigation"
           widget: "object"
           fields:
             - { label: "Tekst", name: "key", widget: "string" }
@@ -58,7 +58,7 @@ collections:
         - { label: "Tytuł", name: "title", widget: "string" }
         - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
         - label: "Pozycja w menu"
-          name: "menu"
+          name: "eleventyNavigation"
           widget: "object"
           fields:
             - { label: "Tekst", name: "key", widget: "string" }
