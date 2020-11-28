@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "img"
+public_folder: "/img"
+slug:
+  encoding: "ascii"
+  clean_accents: true
+collections:
+  - label: "Strony"
+    name: "strony"
+    files:
+    - label: "Piekarnia"
+      name: "piekarnia"
+      file: "index.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string" }
+        - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
+        - label: "Pozycja w menu"
+          name: "menu"
+          widget: "object"
+          fields:
+            - { label: "Tekst", name: "key", widget: "string" }
+            - { label: "Kolejność", name: "order", widget: "number" }
+        - { label: "Galeria", name: "galeria", widget: "list" }
+        - { label: "Treść", name: "body", widget: "markdown" }
+    - label: "Oferta"
+      name: "oferta"
+      file: "oferta.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string" }
+        - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
+        - label: "Pozycja w menu"
+          name: "menu"
+          widget: "object"
+          fields:
+            - { label: "Tekst", name: "key", widget: "string" }
+            - { label: "Kolejność", name: "order", widget: "number" }
+        - { label: "Galeria", name: "galeria", widget: "list" }
+        - { label: "Treść", name: "body", widget: "markdown" }
+    - label: "O nas"
+      name: "o_nas"
+      file: "o-nas.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string" }
+        - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
+        - label: "Pozycja w menu"
+          name: "menu"
+          widget: "object"
+          fields:
+            - { label: "Tekst", name: "key", widget: "string" }
+            - { label: "Kolejność", name: "order", widget: "number" }
+        - { label: "Treść", name: "body", widget: "markdown" }
+    - label: "Kontakt"
+      name: "kontakt"
+      file: "kontakt.md"
+      fields:
+        - { label: "Tytuł", name: "title", widget: "string" }
+        - { label: "Layout", name: "layout", widget: "hidden", default: "layout.njk" }
+        - label: "Pozycja w menu"
+          name: "menu"
+          widget: "object"
+          fields:
+            - { label: "Tekst", name: "key", widget: "string" }
+            - { label: "Kolejność", name: "order", widget: "number" }
+        - { label: "Treść", name: "body", widget: "markdown" }
+

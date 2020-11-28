@@ -1,0 +1,96 @@
+@tailwind base;
+
+@font-face { font-family:Alegreya SC; font-style:normal; font-weight:900; src: local(""), url(/fonts/alegreya-sc-v14-latin-ext-900.woff2) format("woff2"), url(/fonts/alegreya-sc-v14-latin-ext-900.woff) format("woff");
+}
+@tailwind components;
+
+body {
+  @apply min-h-screen;
+  text-rendering: optimizeSpeed
+}
+a {
+  text-decoration-skip-ink:auto 
+}
+img, svg { 
+  @apply max-w-full h-auto block;
+}
+.logo { 
+  max-width:400px 
+}
+nav li:last-child a {
+  @apply border-b-2;
+}
+h1 {
+  @apply bg-zolty font-alegreya font-bold text-2xl leading-8 py-5 text-center text-white uppercase tracking-wider;
+  @screen sm {
+    @apply text-4xl leading-10;
+  }
+}
+
+.tekst {
+  @apply my-12;
+  @screen md {
+    @apply my-24;
+  }
+
+  & > * {
+    @apply mx-auto max-w-3xl px-3;
+  }
+
+  & > * + * {
+    @apply mt-8;
+  }
+
+  img {
+    @apply max-w-full px-0 shadow-lg;
+    @screen md {
+      @apply my-16;
+    }
+    @media (min-width:896px) {
+      max-width: 56rem
+    }
+  }
+
+  h2 {
+    @apply border-zolty border-t-4 border-b-4 font-alegreya font-bold text-2xl leading-8 py-2 text-center uppercase tracking-wider;
+    @screen sm {
+      @apply text-4xl leading-10;
+    }
+    @screen md { 
+      @apply my-16;
+    }
+  }
+
+  ul {
+    @apply pl-8;
+    li {
+      @apply list-disc;
+    }
+  }
+
+  a {
+    @apply underline;
+    text-decoration-color: theme(colors.zolty);
+    text-decoration-thickness: 3px
+  }
+
+  .button {
+    @apply no-underline;
+  }
+
+}
+
+.oferta .tekst ul {
+  @screen sm {
+    @apply pl-10;
+    column-count: 2;
+    li {
+      @apply pr-4; 
+    }
+  }
+  @screen md {
+    column-count: 3;
+  }
+}
+
+@tailwind utilities;

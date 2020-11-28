@@ -1,0 +1,24 @@
+{
+  "name": "piatkowska",
+  "scripts": {
+    "build": "npm-run-all build:css build:html",
+    "build:css": "NODE_ENV=production postcss tailwind.css -o _includes/style.css",
+    "build:html": "NODE_ENV=production eleventy",
+    "watch": "npm-run-all watch:css watch:html",
+    "watch:css": "NODE_ENV=development postcss tailwind.css -o _includes/style.css",
+    "watch:html": "NODE_ENV=development eleventy --serve",
+    "start": "npm run watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "autoprefixer": "^10.0.3",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.10",
+    "postcss-cli": "^8.3.0",
+    "postcss-nested": "^5.0.1",
+    "tailwindcss": "^2.0.1"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.piatkowska.org/{{ page.url }}/">
+  <title>{{ title }} | Spółdzielnia Socjalna „Piątkowska”</title><meta name="description" content="Tradycyjna piekarnia zatrudniająca niepełnosprawnych. Chleb na naturalnym zakwasie, bez konserwantów i ulepszaczy.">
+  {% set css %}
+    {% include "style.css" %}
+  {% endset %}
+  <style>
+    {{ css | safe }}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+ <body class="{{ page.fileSlug }} text-base sm:text-lg md:text-xl leading-normal"><header class="bg-brazowy text-bezowy flex flex-col items-center pt-6 pb-8"><a href="/" class="logo w-3/4 hover:text-white focus:text-white fill-current text-center" aria-label="Logo"><span class="block font-alegreya text-sm sm:text-base uppercase tracking-widest mb-5">Spółdzielnia Socjalna</span> {% include "logo.svg" %}</a>
+  <nav class="mt-8">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+    listClass: "flex flex-col items-center sm:flex-row font-alegreya font-bold uppercase tracking-widest",
+    listItemClass: "mx-3 mt-2",
+    anchorClass: "py-1 border-bezowy border-t-2 sm:border-b-2 hover:text-white focus:text-white",
+    showExcerpt: false
+}) | safe }}
+  </nav>
+  </header>
+  <main>
+    <h1>{% if page.fileSlug == "" %}<span class="sr-only">Spółdzielnia Socjalna „Piątkowska” – </span>{% endif %}{{ title }}</h1>
+    <div class="tekst">
+      {{ content | cudzyslowy | sierotki | safe }}
+      {% if page.fileSlug == "" %}
+        <p class="text-center mt-10 sm:my-16"><a href="/oferta/" class="button hover:bg-zolty focus:bg-zolty font-alegreya text-2xl sm:text-3xl uppercase tracking-wider px-4 py-2 border-zolty border-t-4 border-b-4">Oferta<span aria-hidden="true"> &rarr;</span></a></p>
+      {% endif %}
+    </div>
+    {% if page.fileSlug == "" and galeria.length > 0 %}
+    <div class="grid grid-cols-3">
+      {% for item in galeria %}
+      <img src="/img/{{ item }}.jpg" srcset="/img/{{ item }}-xs.jpg 450w, /img/{{ item }}.jpg 896w, /img/{{ item }}-xl.jpg 1792w" sizes="33.333vw" alt="" loading="lazy">
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.fileSlug == "oferta" and galeria.length > 0 %}
+    <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {% for item in galeria %}
+        <img src="/img/{{ item }}.jpg" srcset="/img/{{ item }}-xs.jpg 450w, /img/{{ item }}.jpg 896w, /img/{{ item }}-xl.jpg 1792w" sizes="(min-width: 640px) 50vw, (min-width: 1024px) 33vw, (min-width: 1280px) 25vw, 100vw" alt="" loading="lazy">        
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.fileSlug == "kontakt" %}
+      {% include "map.njk" %}
+    {% endif %}
+  </main>
+  <footer class="my-5">
+    <p class="text-gray-600 text-xs text-center tracking-wider">Strona przygotowana w ramach projektu „Ośrodek Wsparcia Ekonomii Społecznej Centrum KLUCZ”</p>
+    <img src="/img/ueefs.png" alt="Fundusze Europejskie – zestaw logotypów" class="px-4 mx-auto mt-5">
+  </footer>
+  {% if page.fileSlug == "" %}
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  {% endif %}
+</body>
+</html>
