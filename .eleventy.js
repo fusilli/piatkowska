@@ -1,6 +1,9 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+  
+  eleventyConfig.setUseGitIgnore(false);
+
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   
   eleventyConfig.addShortcode("foto", (src, alt = "") => {

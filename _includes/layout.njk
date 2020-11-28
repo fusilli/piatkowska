@@ -13,15 +13,17 @@
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
- <body class="{{ page.fileSlug }} text-base sm:text-lg md:text-xl leading-normal"><header class="bg-brazowy text-bezowy flex flex-col items-center pt-6 pb-8"><a href="/" class="logo w-3/4 hover:text-white focus:text-white fill-current text-center" aria-label="Logo"><span class="block font-alegreya text-sm sm:text-base uppercase tracking-widest mb-5">Spółdzielnia Socjalna</span> {% include "logo.svg" %}</a>
-  <nav class="mt-8">
-    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-    listClass: "flex flex-col items-center sm:flex-row font-alegreya font-bold uppercase tracking-widest",
-    listItemClass: "mx-3 mt-2",
-    anchorClass: "py-1 border-bezowy border-t-2 sm:border-b-2 hover:text-white focus:text-white",
-    showExcerpt: false
-}) | safe }}
-  </nav>
+ <body class="{{ page.fileSlug }} text-base sm:text-lg md:text-xl leading-normal">
+  <header class="bg-brazowy text-bezowy flex flex-col items-center pt-6 pb-8">
+    <a href="/" class="logo w-3/4 hover:text-white focus:text-white fill-current text-center" aria-label="Logo"><span class="block font-alegreya text-sm sm:text-base uppercase tracking-widest mb-5">Spółdzielnia Socjalna</span> {% include "logo.svg" %}</a>
+    <nav class="mt-8">
+      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+      listClass: "flex flex-col items-center sm:flex-row font-alegreya font-bold uppercase tracking-widest",
+      listItemClass: "mx-3 mt-2",
+      anchorClass: "py-1 border-bezowy border-t-2 sm:border-b-2 hover:text-white focus:text-white",
+      showExcerpt: false
+  }) | safe }}
+    </nav>
   </header>
   <main>
     <h1>{% if page.fileSlug == "" %}<span class="sr-only">Spółdzielnia Socjalna „Piątkowska” – </span>{% endif %}{{ title }}</h1>
