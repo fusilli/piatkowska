@@ -12,4 +12,6 @@ eleventyNavigation:
 
 Od początku działalności we współpracy z [Instytutem Spraw Obywatelskich](https://instytutsprawobywatelskich.pl/) zrealizowaliśmy kilka projektów, dzięki którym mogliśmy wyremontować piekarnię i zakupić niezbędny sprzęt do konfekcjonowania pieczywa (krajalnica), gospodarowania terenami zielonymi (kosiarka, piła spalinowa i podkaszarki) oraz sprzątania powierzchni użytkowych (odkurzacz przemysłowy i parownica).
 
-Spółdzielnia posiada certyfikat „Zakup prospoleczny”.
+Spółdzielnia posiada certyfikat „Zakup prospołeczny”.
+
+<img src="/img/zakup-prospoleczny.png" srcset="/img/zakup-prospoleczny.png 500w, /img/zakup-prospoleczny-xl.png 1000w" sizes="(min-width: 501px) 500px, 100vw" alt="Zakup prospołeczny – logo" class="bez-cienia" width="500" height="323" loading="lazy">
